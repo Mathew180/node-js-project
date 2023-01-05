@@ -5,7 +5,21 @@ const cors = require("cors");
 
 const PORT = 3500 || process.env.PORT;
 
-app.use(cors());
+const weblist = ["http://localhost:3500"]
+
+const corsOptions = {
+    origin : (origin, callbackt) => {
+        if(weblist.indexOf() !== -1){
+           callbackt(null, true)
+        }else{
+           callback(new Error('Not allowed by cors'))
+        }
+
+    },
+    optionStatusSuccess:  200
+}
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
