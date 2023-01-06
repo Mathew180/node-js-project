@@ -9,7 +9,7 @@ const weblist = ["http://localhost:3500"]
 
 const corsOptions = {
     origin : (origin, callbackt) => {
-        if(weblist.indexOf() !== -1){
+        if(weblist.indexOf() !== -1 || !origin){
            callbackt(null, true)
         }else{
            callback(new Error('Not allowed by cors'))
