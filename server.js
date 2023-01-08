@@ -2,7 +2,20 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const cors = require("cors");
+const logEvents = require("./middlewares/logEvents")
 const errorHandler = require("./middlewares/errorHandler")
+
+const EventEmitter = require('events');
+
+class MyEmitter extends EventEmitter { };
+
+const myEmitter = new MyEmitter();
+
+myEmitter.on('log', (msg) => logEvents(msg))
+
+setTimeout(() => {
+    myEmitter.emit('log', 'Log event emitted')
+}, 2000)
 
 const PORT = 3500 || process.env.PORT;
 
