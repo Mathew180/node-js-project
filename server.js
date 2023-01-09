@@ -13,9 +13,9 @@ const myEmitter = new MyEmitter();
 
 myEmitter.on('log', (msg) => logEvents(msg))
 
-setTimeout(() => {
-    myEmitter.emit('log', 'Log event emitted')
-}, 2000)
+// setTimeout(() => {
+//     myEmitter.emit('log', 'Log event emitted')
+// }, 2000)
 
 const PORT = 3500 || process.env.PORT;
 
