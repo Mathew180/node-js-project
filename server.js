@@ -48,7 +48,7 @@ app.get("^/$|/index(.html)?", (req, res) => {
     res.sendFile(path.join(__dirname, "views", "index.html"))
 })
 
-app.use(errorHandler);
+
 
 app.listen(PORT, () => {
     console.log(`Backend is currently running on port ${PORT}`)
