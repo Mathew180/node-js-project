@@ -1,0 +1,5 @@
+
+
+
+sayHi('susan')
+sayHi('john')
